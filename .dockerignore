@@ -1,0 +1,16 @@
+node_modules
+npm-debug.log
+.git
+.gitignore
+.DS_Store
+.env.example
+README.md
+LICENSE
+.editorconfig
+.vscode
+.idea
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+vendor/
+bootstrap/cache/*
