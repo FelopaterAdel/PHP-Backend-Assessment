@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('sku')->unique();
             $table->string('name');
             $table->text('description')->nullable();
             $table->decimal('price', 10, 2);
-            $table->integer('stock')->default(0);
-            $table->enum('status', ['active', 'inactive','discontinued'])->default('active');
+            $table->integer('stock_quantity')->default(0);
+            $table->integer('low_stock_threshold')->default(0);
+            $table->enum('status', ['active', 'inactive', 'discontinued'])->default('active');
             $table->timestamps();
             $table->softDeletes();
         });

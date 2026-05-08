@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
-
-    use SoftDeletes,HasUuid;
+    use HasFactory;
+    use SoftDeletes;
 
     protected $fillable = [
         'sku',
@@ -20,6 +22,6 @@ class Product extends Model
     ];
 
     protected $casts = [
-        'price' => 'decimal:2',
+        'price' => 'float',
       ];
 }
